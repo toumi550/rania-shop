@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration de Démonstration - RANIA SHOP</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        .setup-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e74c3c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+        .step h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .step p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .button {
+            background: #e74c3c;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background: #c0392b;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="setup-container">
+        <h1>🛍️ RANIA SHOP - Configuration de Démonstration</h1>
+        
+        <div class="success">
+            <strong>✅ Installation Réussie !</strong><br>
+            Votre site e-commerce RANIA SHOP a été créé avec succès. Suivez les étapes ci-dessous pour commencer.
+        </div>
+
+        <div class="step">
+            <h3>📁 Structure du Projet</h3>
+            <p>Votre projet contient tous les fichiers nécessaires :</p>
+            <div class="code">
+rania-shop/
+├── index.html          # Site principal
+├── css/style.css       # Styles
+├── js/                 # Scripts JavaScript
+├── admin/              # Panneau d'administration
+├── images/             # Dossier pour vos images
+└── README.md           # Documentation
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>🚀 Démarrage Rapide</h3>
+            <p>Pour commencer à utiliser votre site :</p>
+            <a href="index.html" class="button">🏠 Ouvrir le Site Principal</a>
+            <a href="admin/index.html" class="button">⚙️ Panneau d'Administration</a>
+        </div>
+
+        <div class="step">
+            <h3>🔐 Accès Administration</h3>
+            <p>Identifiants pour accéder au panneau d'administration :</p>
+            <div class="code">
+Utilisateur : admin
+Mot de passe : admin123
+            </div>
+            <div class="warning">
+                <strong>⚠️ Important :</strong> Changez ces identifiants en production !
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>🖼️ Configuration des Images</h3>
+            <p>Le site utilise actuellement des images de démonstration depuis Unsplash. Pour utiliser vos propres images :</p>
+            <ol>
+                <li>Ajoutez vos images dans le dossier <code>images/</code></li>
+                <li>Modifiez les URLs dans <code>js/products.js</code></li>
+                <li>Optimisez vos images pour le web (format WebP recommandé)</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>🛒 Fonctionnalités Incluses</h3>
+            <p>Votre site e-commerce comprend :</p>
+            <ul>
+                <li>✅ Catalogue de produits avec filtres</li>
+                <li>✅ Panier d'achat fonctionnel</li>
+                <li>✅ Système de commande complet</li>
+                <li>✅ Formulaire avec toutes les wilayas d'Algérie</li>
+                <li>✅ Paiement à la livraison (COD)</li>
+                <li>✅ Panneau d'administration</li>
+                <li>✅ Design responsive</li>
+                <li>✅ Animations et effets modernes</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>⚙️ Personnalisation</h3>
+            <p>Pour personnaliser votre boutique :</p>
+            <ol>
+                <li><strong>Produits :</strong> Modifiez <code>js/products.js</code></li>
+                <li><strong>Couleurs :</strong> Changez les variables CSS dans <code>css/style.css</code></li>
+                <li><strong>Informations :</strong> Utilisez le panneau d'administration</li>
+                <li><strong>Logo :</strong> Remplacez le texte "RANIA SHOP" par votre logo</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>📱 Test sur Mobile</h3>
+            <p>Le site est entièrement responsive. Testez-le sur :</p>
+            <ul>
+                <li>📱 Smartphones (320px - 767px)</li>
+                <li>📱 Tablettes (768px - 1199px)</li>
+                <li>💻 Desktop (1200px+)</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🔧 Serveur Local (Recommandé)</h3>
+            <p>Pour une meilleure expérience, utilisez un serveur local :</p>
+            <div class="code">
+# Avec Python 3
+python -m http.server 8000
+
+# Avec Node.js (npx)
+npx http-server
+
+# Avec PHP
+php -S localhost:8000
+            </div>
+            <p>Puis ouvrez : <code>http://localhost:8000</code></p>
+        </div>
+
+        <div class="step">
+            <h3>📊 Données de Test</h3>
+            <p>Le site inclut :</p>
+            <ul>
+                <li>12 produits de démonstration</li>
+                <li>4 catégories (Électronique, Mode, Maison, Beauté)</li>
+                <li>Système de stockage local (localStorage)</li>
+                <li>Formulaire de contact fonctionnel</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🚀 Mise en Production</h3>
+            <p>Pour déployer votre site :</p>
+            <ol>
+                <li>Changez les identifiants d'administration</li>
+                <li>Remplacez les images de démonstration</li>
+                <li>Configurez un serveur web (Apache/Nginx)</li>
+                <li>Activez HTTPS</li>
+                <li>Implémentez une base de données</li>
+                <li>Ajoutez un système de paiement réel</li>
+            </ol>
+        </div>
+
+        <div class="success">
+            <strong>🎉 Félicitations !</strong><br>
+            Votre site e-commerce RANIA SHOP est prêt à être utilisé. Consultez le fichier README.md pour plus de détails.
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="button">🛍️ Commencer les Achats</a>
+            <a href="admin/index.html" class="button">👨‍💼 Administration</a>
+        </div>
+    </div>
+
+    <script>
+        // Ajouter quelques données de démonstration
+        if (!localStorage.getItem('demoDataLoaded')) {
+            // Ajouter une commande de démonstration
+            const demoOrder = {
+                customer: {
+                    firstName: "Ahmed",
+                    lastName: "Benali",
+                    phone: "+213 555 123 456",
+                    address: "123 Rue de la Liberté",
+                    wilaya: "16",
+                    postalCode: "16000",
+                    note: "Livraison après 14h SVP"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: "Smartphone Samsung Galaxy",
+                        price: 45000,
+                        quantity: 1,
+                        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400"
+                    }
+                ],
+                total: 45000,
+                paymentMethod: "cod",
+                orderDate: new Date().toISOString()
+            };
+
+            // Ajouter un message de contact de démonstration
+            const demoContact = {
+                name: "Fatima Zohra",
+                email: "fatima@example.com",
+                message: "Bonjour, j'aimerais savoir si vous livrez à Oran. Merci !",
+                date: new Date().toISOString()
+            };
+
+            // Sauvegarder dans localStorage
+            localStorage.setItem('orders', JSON.stringify([demoOrder]));
+            localStorage.setItem('contacts', JSON.stringify([demoContact]));
+            localStorage.setItem('demoDataLoaded', 'true');
+        }
+    </script>
+</body>
+</html>

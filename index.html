@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANIA SHOP - Boutique en ligne moderne</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>RANIA SHOP</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#products">Produits</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue chez RANIA SHOP</h1>
+            <p>Découvrez notre collection exclusive de produits de qualité</p>
+            <button class="cta-button" onclick="scrollToProducts()">Découvrir nos produits</button>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero-image.jpg" alt="RANIA SHOP">
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Nos Produits</h2>
+            
+            <!-- Product Categories -->
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">Tous</button>
+                <button class="filter-btn" data-category="electronics">Électronique</button>
+                <button class="filter-btn" data-category="fashion">Mode</button>
+                <button class="filter-btn" data-category="home">Maison</button>
+                <button class="filter-btn" data-category="beauty">Beauté</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>À propos de RANIA SHOP</h2>
+                    <p>RANIA SHOP est votre destination de choix pour des produits de qualité supérieure. Nous nous engageons à offrir une expérience d'achat exceptionnelle avec des produits soigneusement sélectionnés et un service client de premier plan.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h3>Livraison rapide</h3>
+                            <p>Livraison dans toute l'Algérie</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Qualité garantie</h3>
+                            <p>Produits authentiques et de qualité</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <h3>Support 24/7</h3>
+                            <p>Service client disponible</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-image.jpg" alt="À propos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Adresse</h3>
+                        <p>Alger, Algérie</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Téléphone</h3>
+                        <p>+213 XXX XXX XXX</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>contact@raniashop.dz</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Votre nom" required>
+                    <input type="email" placeholder="Votre email" required>
+                    <textarea placeholder="Votre message" required></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Panier d'achat</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: <span id="cart-total">0 DA</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">
+                Passer la commande
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProductModal()">&times;</span>
+            <div class="modal-body">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="modal-main-image" src="" alt="">
+                        <div class="zoom-lens"></div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <!-- Thumbnails will be loaded dynamically -->
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h2 id="modal-product-title"></h2>
+                    <p class="product-price" id="modal-product-price"></p>
+                    <p class="product-description" id="modal-product-description"></p>
+                    <div class="quantity-selector">
+                        <label>Quantité:</label>
+                        <div class="quantity-controls">
+                            <button onclick="decreaseQuantity()">-</button>
+                            <input type="number" id="modal-quantity" value="1" min="1">
+                            <button onclick="increaseQuantity()">+</button>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromModal()">
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
+            <div class="checkout-content">
+                <h2>Finaliser la commande</h2>
+                <form class="checkout-form" id="checkout-form">
+                    <div class="form-section">
+                        <h3>Informations personnelles</h3>
+                        <div class="form-row">
+                            <input type="text" name="firstName" placeholder="Prénom *" required>
+                            <input type="text" name="lastName" placeholder="Nom *" required>
+                        </div>
+                        <input type="tel" name="phone" placeholder="Numéro de téléphone *" required>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Adresse de livraison</h3>
+                        <input type="text" name="address" placeholder="Adresse complète *" required>
+                        <div class="form-row">
+                            <select name="wilaya" required>
+                                <option value="">Sélectionner une wilaya *</option>
+                                <option value="01">01 - Adrar</option>
+                                <option value="02">02 - Chlef</option>
+                                <option value="03">03 - Laghouat</option>
+                                <option value="04">04 - Oum El Bouaghi</option>
+                                <option value="05">05 - Batna</option>
+                                <option value="06">06 - Béjaïa</option>
+                                <option value="07">07 - Biskra</option>
+                                <option value="08">08 - Béchar</option>
+                                <option value="09">09 - Blida</option>
+                                <option value="10">10 - Bouira</option>
+                                <option value="11">11 - Tamanrasset</option>
+                                <option value="12">12 - Tébessa</option>
+                                <option value="13">13 - Tlemcen</option>
+                                <option value="14">14 - Tiaret</option>
+                                <option value="15">15 - Tizi Ouzou</option>
+                                <option value="16">16 - Alger</option>
+                                <option value="17">17 - Djelfa</option>
+                                <option value="18">18 - Jijel</option>
+                                <option value="19">19 - Sétif</option>
+                                <option value="20">20 - Saïda</option>
+                                <option value="21">21 - Skikda</option>
+                                <option value="22">22 - Sidi Bel Abbès</option>
+                                <option value="23">23 - Annaba</option>
+                                <option value="24">24 - Guelma</option>
+                                <option value="25">25 - Constantine</option>
+                                <option value="26">26 - Médéa</option>
+                                <option value="27">27 - Mostaganem</option>
+                                <option value="28">28 - M'Sila</option>
+                                <option value="29">29 - Mascara</option>
+                                <option value="30">30 - Ouargla</option>
+                                <option value="31">31 - Oran</option>
+                                <option value="32">32 - El Bayadh</option>
+                                <option value="33">33 - Illizi</option>
+                                <option value="34">34 - Bordj Bou Arréridj</option>
+                                <option value="35">35 - Boumerdès</option>
+                                <option value="36">36 - El Tarf</option>
+                                <option value="37">37 - Tindouf</option>
+                                <option value="38">38 - Tissemsilt</option>
+                                <option value="39">39 - El Oued</option>
+                                <option value="40">40 - Khenchela</option>
+                                <option value="41">41 - Souk Ahras</option>
+                                <option value="42">42 - Tipaza</option>
+                                <option value="43">43 - Mila</option>
+                                <option value="44">44 - Aïn Defla</option>
+                                <option value="45">45 - Naâma</option>
+                                <option value="46">46 - Aïn Témouchent</option>
+                                <option value="47">47 - Ghardaïa</option>
+                                <option value="48">48 - Relizane</option>
+                            </select>
+                            <input type="text" name="postalCode" placeholder="Code postal">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Note (optionnel)</h3>
+                        <textarea name="note" placeholder="Instructions de livraison ou commentaires..."></textarea>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Mode de paiement</h3>
+                        <div class="payment-method">
+                            <input type="radio" id="cod" name="payment" value="cod" checked>
+                            <label for="cod">
+                                <i class="fas fa-money-bill-wave"></i>
+                                Paiement à la livraison (Cash on Delivery)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h3>Résumé de la commande</h3>
+                        <div id="checkout-items"></div>
+                        <div class="total-line">
+                            <strong>Total: <span id="checkout-total">0 DA</span></strong>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="confirm-order-btn">
+                        Confirmer la commande
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RANIA SHOP</h3>
+                    <p>Votre boutique en ligne de confiance pour des produits de qualité.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#products">Produits</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Service client</h3>
+                    <ul>
+                        <li><a href="#">Politique de retour</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Alger, Algérie</p>
+                    <p><i class="fas fa-phone"></i> +213 XXX XXX XXX</p>
+                    <p><i class="fas fa-envelope"></i> contact@raniashop.dz</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RANIA SHOP. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

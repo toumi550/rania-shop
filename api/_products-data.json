@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Smartphone Samsung Galaxy",
+      "price": 45000,
+      "category": "electronics",
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400",
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=400"
+      ],
+      "description": "Smartphone dernière génération avec écran AMOLED, appareil photo haute résolution et batterie longue durée.",
+      "stock": 100
+    },
+    {
+      "id": 2,
+      "title": "Robe Élégante",
+      "price": 8500,
+      "category": "fashion",
+      "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400",
+      "images": [
+        "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400",
+        "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400"
+      ],
+      "description": "Robe élégante parfaite pour toutes occasions spéciales. Tissu de haute qualité et coupe moderne.",
+      "stock": 50
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Électronique",
+      "key": "electronics",
+      "icon": "fas fa-mobile-alt",
+      "color": "#3498db",
+      "description": "Appareils électroniques et gadgets"
+    },
+    {
+      "id": 2,
+      "name": "Mode",
+      "key": "fashion",
+      "icon": "fas fa-tshirt",
+      "color": "#e74c3c",
+      "description": "Vêtements et accessoires"
+    }
+  ],
+  "lastUpdated": "2024-01-01T00:00:00.000Z"
+}
