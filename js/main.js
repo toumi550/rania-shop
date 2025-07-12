@@ -302,7 +302,18 @@ function initializeSmoothScrolling() {
 }
 
 // Initialize all functionality when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    // Hero Swiper
+    const heroSwiper = new Swiper('.hero-swiper', {
+        loop: true,
+        effect: 'fade',
+        autoplay: {
+            delay: 7000, // Time between slides
+            disableOnInteraction: false,
+        },
+        speed: 1000, // Transition speed
+        watchSlidesProgress: true,
+    });
     // Initialize mobile menu
     const menuToggle = document.querySelector('.menu-toggle');
     if (menuToggle) {

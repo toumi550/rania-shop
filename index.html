@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <!-- Header -->
@@ -40,13 +41,47 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Bienvenue chez RANIA SHOP</h1>
-            <p>Découvrez notre collection exclusive de produits de qualité</p>
-            <button class="cta-button" onclick="scrollToProducts()">Découvrir nos produits</button>
+        <!-- Swiper -->
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide" style="background-image:url(https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80)"></div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide" style="background-image:url(https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80)"></div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide" style="background-image:url(https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)"></div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide" style="background-image:url(https://images.unsplash.com/photo-1594223274512-ad4803739b7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)"></div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide" style="background-image:url(https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)"></div>
+                <!-- Slide 6 -->
+                <div class="swiper-slide" style="background-image:url(https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)"></div>
+            </div>
         </div>
-        <div class="hero-image">
-            <img src="images/hero-image.jpg" alt="RANIA SHOP">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">Nouvelle Collection 2025</span>
+            <h1>L'Élégance à Votre Portée</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Découvrez des pièces uniques qui racontent votre style</p>
+            <div class="hero-buttons">
+                <button class="cta-button primary" onclick="scrollToProducts()">Découvrir la collection</button>
+                <button class="cta-button secondary" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Nous contacter</button>
+            </div>
+            <div class="hero-features">
+                <div class="feature-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Livraison gratuite</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-undo"></i>
+                    <span>Retour facile</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lock"></i>
+                    <span>Paiement sécurisé</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -97,7 +132,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="images/about-image.jpg" alt="À propos">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Notre équipe">
                 </div>
             </div>
         </div>
@@ -347,6 +382,7 @@
     <!-- Scripts -->
     <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
